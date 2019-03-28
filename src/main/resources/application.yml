@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: legal-agreements
+
+
+# Database
+spring.datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/pokedex?createDatabaseIfNotExist=true
+  username: postgres
+  password: postgres
+  initialization-mode: always
+
+server:
+  port: 8080
+
