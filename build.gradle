@@ -1,7 +1,6 @@
 buildscript {
     ext {
         springBootVersion = '2.0.6.RELEASE'
-        kotlinVersion = '1.2.71'
         jacksonModuleKotlin = '2.9.7'
         jaxbApiVersion = '2.3.0'
 
@@ -16,14 +15,11 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
         classpath "org.junit.platform:junit-platform-gradle-plugin:$junitGradlePlatformVersion"
     }
 }
 
 apply plugin: 'java'
-apply plugin: "kotlin"
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -50,14 +46,9 @@ dependencies {
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.postgresql:postgresql"
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonModuleKotlin"
-
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJuniper"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJuniper"
-    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
     testCompile "org.assertj:assertj-core:$assertJCoreVersion"
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
